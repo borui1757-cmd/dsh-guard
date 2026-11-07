@@ -1,0 +1,38 @@
+{
+  "name": "dsh-guard",
+  "version": "0.1.0",
+  "description": "危险区守卫：动手前检查单实例 + 滚动备份，动手后结构体检，坏了从快照补齐。",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "backup",
+    "snapshot",
+    "session-recovery",
+    "integrity-check",
+    "single-instance",
+    "data-safety"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./guard": "./lib/guard.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "cordis.patch.yml", "README.md"],
+  "engines": { "node": ">=20" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "meta": {
+      "title": "危险区守卫（自研）",
+      "description": "单实例检查 + 滚动备份 + 会话结构体检 + 快照恢复"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": { "optional": true }
+  }
+}
