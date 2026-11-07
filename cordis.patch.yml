@@ -1,0 +1,7 @@
+# dsh-guard 的挂载行。
+# 必须放在 bundle 层 patch 里：用户层 patch 会被 Loader 静默忽略（不报错也不加载）。
+- insert:
+    - id: dsh-guard
+      name: dsh-guard
+      config:
+        port: 3080
